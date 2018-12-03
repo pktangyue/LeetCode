@@ -75,3 +75,30 @@ class TestTestSolution(unittest.TestCase):
             target,
             AddTwoNumbersSolution().addTwoNumbers(l1, l2)
         )
+
+    def test_LengthOfLongestSubstring(self):
+        LengthOfLongestSubstringSolution = __import__('3_LongestSubstringWithoutRepeatingCharacters').Solution
+        self.assertEqual(
+            3,
+            LengthOfLongestSubstringSolution().lengthOfLongestSubstring("abcabcbb")
+        )
+        self.assertEqual(
+            1,
+            LengthOfLongestSubstringSolution().lengthOfLongestSubstring("bbbbb")
+        )
+        self.assertEqual(
+            3,
+            LengthOfLongestSubstringSolution().lengthOfLongestSubstring("pwwkew")
+        )
+        self.assertEqual(
+            3,
+            LengthOfLongestSubstringSolution().lengthOfLongestSubstring("aabaab!bb")
+        )
+        self.assertEqual(
+            1,
+            LengthOfLongestSubstringSolution().lengthOfLongestSubstring(" ")
+        )
+        self.assertEqual(
+            2,
+            LengthOfLongestSubstringSolution().lengthOfLongestSubstring("au")
+        )
