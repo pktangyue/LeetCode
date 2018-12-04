@@ -6,7 +6,8 @@ class Solution:
         :rtype: List[int]
         """
         h = {}
-        for i, value in enumerate(nums):
+        for i in range(len(nums)):
+            value = nums[i]
             if value in h:
                 return [h[value], i]
             else:
