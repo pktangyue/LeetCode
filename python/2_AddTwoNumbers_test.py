@@ -1,18 +1,11 @@
 import unittest
 
 
-class TestTestSolution(unittest.TestCase):
-
-    def test_TwoSum(self):
-        TwoSumSolution = __import__('1_TwoSum').Solution
-        self.assertEqual(
-            [0, 1],
-            TwoSumSolution().twoSum([2, 7, 11, 15], 9)
-        )
+class TestSolution(unittest.TestCase):
 
     def test_AddTwoNumbers(self):
         module = __import__('2_AddTwoNumbers')
-        AddTwoNumbersSolution = module.Solution
+        Solution = module.Solution
         ListNode = module.ListNode
 
         target = ListNode(7)
@@ -26,7 +19,7 @@ class TestTestSolution(unittest.TestCase):
         l2.next.next = ListNode(4)
         self.assertEqual(
             target,
-            AddTwoNumbersSolution().addTwoNumbers(l1, l2)
+            Solution().addTwoNumbers(l1, l2)
         )
 
         target = ListNode(7)
@@ -41,7 +34,7 @@ class TestTestSolution(unittest.TestCase):
         l2.next.next = ListNode(4)
         self.assertEqual(
             target,
-            AddTwoNumbersSolution().addTwoNumbers(l1, l2)
+            Solution().addTwoNumbers(l1, l2)
         )
 
         target = ListNode(7)
@@ -57,7 +50,7 @@ class TestTestSolution(unittest.TestCase):
         l2.next.next = ListNode(4)
         self.assertEqual(
             target,
-            AddTwoNumbersSolution().addTwoNumbers(l1, l2)
+            Solution().addTwoNumbers(l1, l2)
         )
 
         target = ListNode(7)
@@ -73,32 +66,5 @@ class TestTestSolution(unittest.TestCase):
         l2.next.next.next = ListNode(1)
         self.assertEqual(
             target,
-            AddTwoNumbersSolution().addTwoNumbers(l1, l2)
-        )
-
-    def test_LengthOfLongestSubstring(self):
-        LengthOfLongestSubstringSolution = __import__('3_LongestSubstringWithoutRepeatingCharacters').Solution
-        self.assertEqual(
-            3,
-            LengthOfLongestSubstringSolution().lengthOfLongestSubstring("abcabcbb")
-        )
-        self.assertEqual(
-            1,
-            LengthOfLongestSubstringSolution().lengthOfLongestSubstring("bbbbb")
-        )
-        self.assertEqual(
-            3,
-            LengthOfLongestSubstringSolution().lengthOfLongestSubstring("pwwkew")
-        )
-        self.assertEqual(
-            3,
-            LengthOfLongestSubstringSolution().lengthOfLongestSubstring("aabaab!bb")
-        )
-        self.assertEqual(
-            1,
-            LengthOfLongestSubstringSolution().lengthOfLongestSubstring(" ")
-        )
-        self.assertEqual(
-            2,
-            LengthOfLongestSubstringSolution().lengthOfLongestSubstring("au")
+            Solution().addTwoNumbers(l1, l2)
         )
