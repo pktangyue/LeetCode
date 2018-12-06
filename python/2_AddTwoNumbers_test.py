@@ -1,12 +1,13 @@
 import unittest
 
+from models import ListNode
+
 
 class TestSolution(unittest.TestCase):
 
     def test_AddTwoNumbers(self):
         module = __import__('2_AddTwoNumbers')
         Solution = module.Solution
-        ListNode = module.ListNode
 
         target = ListNode(7)
         target.next = ListNode(0)
