@@ -1,7 +1,7 @@
 import unittest
 
 
-class TestTestSolution(unittest.TestCase):
+class TestSolution(unittest.TestCase):
 
     def test_TwoSum(self):
         Solution = __import__('1_TwoSum').Solution
