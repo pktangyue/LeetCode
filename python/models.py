@@ -22,15 +22,17 @@ class TreeNode:
     def fromArray(cls, arr: List[Optional[int]]) -> Optional[TreeNode]:
         if len(arr) == 0:
             return None
-
-        def dfs(i: int) -> Optional[TreeNode]:
-            if not arr[i]:
-                return None
-            root = cls(arr[i])
-            if 2 * i + 1 < len(arr):
-                root.left = dfs(2 * i + 1)
-            if 2 * i + 2 < len(arr):
-                root.right = dfs(2 * i + 2)
-            return root
-
-        return dfs(0)
+        root = cls(arr.pop(0))
+        nodes = [root]
+        while arr:
+            node = nodes.pop(0)
+            left = arr.pop(0)
+            if left is not None:
+                node.left = cls(left)
+                nodes.append(node.left)
+            if arr:
+                right = arr.pop(0)
+                if right is not None:
+                    node.right = cls(right)
+                    nodes.append(node.right)
+        return root
