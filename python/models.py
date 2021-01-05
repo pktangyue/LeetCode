@@ -13,7 +13,7 @@ class ListNode:
 
 
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+    def __init__(self, val=0, left: TreeNode = None, right: TreeNode = None):
         self.val = val
         self.left = left
         self.right = right
@@ -36,3 +36,18 @@ class TreeNode:
                     node.right = cls(right)
                     nodes.append(node.right)
         return root
+
+    @classmethod
+    def toArray(cls, root: Optional[TreeNode]) -> List[Optional[int]]:
+        ret = []
+        nodes = [root]
+        while nodes:
+            node = nodes.pop(0)
+            ret.append(node and node.val)
+            if node:
+                nodes.append(node.left)
+                nodes.append(node.right)
+
+        while ret and ret[-1] is None:
+            del ret[-1]
+        return ret
