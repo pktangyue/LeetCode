@@ -11,6 +11,29 @@ class ListNode:
     def __eq__(self, other):
         return self.__class__ == other.__class__ and self.val == other.val and self.next == other.next
 
+    @classmethod
+    def fromArray(cls, arr: List[int]) -> Optional[ListNode]:
+        if len(arr) == 0:
+            return None
+        root = cls(arr.pop(0))
+        node = root
+        while arr:
+            node.next = cls(arr.pop(0))
+            node = node.next
+        return root
+
+    @classmethod
+    def toArray(cls, root: Optional[ListNode]) -> Optional[List[int]]:
+        if root is None:
+            return None
+        ret = [root.val]
+        node = root
+        while node.next:
+            node = node.next
+            ret.append(node.val)
+
+        return ret
+
 
 class TreeNode:
     def __init__(self, val=0, left: TreeNode = None, right: TreeNode = None):
